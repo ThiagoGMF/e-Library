@@ -1,0 +1,16 @@
+<a class="text-color-clear" href="/" style="text-decoration:none">
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-fixed-top color-navbar">
+        <nav class="pl-2">
+            <img src="<%= asset_path('book-stack.png') %>" width="25" height="25" class="mt-2 mr-1 d-inline-block align-top" style="-webkit-filter: invert(100%) !important;" alt="">
+            <b class="navbar-brand">
+                e-Library
+            </b>	
+        </nav>
+</a>
+
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav text-color-clear no-text-decoration">									
+        <%= link_to 'Add book', new_book_path , class: 'nav-item nav-link text-white' %>
+    </div>
+</div>
+

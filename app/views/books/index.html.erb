@@ -1,0 +1,33 @@
+<% content_for :content do %>
+
+  <br/>
+
+  <div id="search_field">
+    <%= bootstrap_form_tag url: '/', method: :get do |f| %>
+        <%= f.text_field :search, hide_label: true, placeholder: 'Search for book\'s titles or authors' %>
+    <% end %>
+  </div>
+
+  <br/>
+
+  <div id = "container">
+    <% @books.each do |book| %>
+    <a class = "books" href= <%= url_for(book) %> >
+      <section class= "info">
+        <img src = <%= url_for(book.cover) %> alt="book_cover"> 
+        <div class="content">
+          <h3><%= book.title %></h3>
+          <h4><%= book.author %></h4>
+        </div>
+      </a>
+    </section>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="mt-3 d-flex justify-content-center">
+	  <%= will_paginate @books %>
+  </div>
+
+<% end %>

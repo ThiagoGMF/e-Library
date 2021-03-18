@@ -1,0 +1,58 @@
+<% content_for :content do %>
+
+    <div class="text-center">
+        
+        <br/><h2>New Book</h2><br/>
+
+        <%= bootstrap_form_for(@book, class: 'text-right') do |f| %>
+
+            <div class = "same-line">
+
+                <div class = "initial-infos">
+                    <%= f.text_field :title %><br/>
+                    <%= f.text_field :author %><br/>
+                    <%= f.number_field :year %><br/>
+                </div>
+
+                <div class = "large-text">
+                    <%= f.text_area :description %><br/>
+                </div>
+            
+            </div>
+
+            <div class = "same-line">
+
+            <%= f.fields_for :tag do |t|%>
+                <div>
+                    <%= t.select :semester, [["1", "first"], ["2", "second"], ["3", "third"], ["4", "fourth"],
+                    ["5", "fifth"], ["6", "sixth"], ["7", "seventh"], ["8", "eighth"], 
+                    ["9", "ninth"], ["10", "tenth"]] %>
+                    <br/>
+                    <%= t.text_field :course %><br/>
+                </div>
+                <div>
+                    <%= t.select :degree, [["bachelor", "bachelor"], ["lincenciature", "licenciature"]] %>
+                    <br/>
+                    <%= t.text_field :others %><br/>
+                </div>
+            <% end %>
+
+            </div>
+
+            <%= f.label :photo %>
+            <%= f.file_field :cover, hide_label: true %><br/>
+            <%= f.label :document %>
+            <%= f.file_field :content, hide_label: true %><br/>
+
+
+            <div class="d-flex justify-content-center col">
+                    <%= f.submit "Create" %>
+            </div>
+
+	    <% end %>
+    
+        <br/>
+
+    </div>
+    
+<% end %>

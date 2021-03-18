@@ -1,0 +1,54 @@
+<% content_for :content do %>
+
+  <div class = "book_title">
+    <br/> <h1 style="text-align:center"><%= @book.title %></h1>
+    <br/> <h2 style="text-align:center"><%= @book.author %></h1> <br/>
+  </div>
+
+  <div id = "book_info">
+
+    <div class = "about">
+
+      <section id="book's_cover">
+        <img src = <%= url_for(@book.cover) %> alt="book_cover">
+      </section>
+
+      <section class="info_section">
+        <strong>Year:</strong>
+        <%= @book.year %>
+      </section>
+
+      <section class="info_section">
+        <strong>Description:</strong>
+        <%= @book.description %>
+      </section>
+
+      <section class="info_section">
+        <strong>Semester:</strong>
+        <%= @book.tag.semester %>
+      </section>
+
+      <section class="info_section">
+        <strong>Course:</strong>
+        <%= @book.tag.course %>
+      </section>
+
+      <section class="info_section">
+        <strong>Others:</strong>
+        <%= @book.tag.others %>
+      </section>
+
+      <section class="info_section">
+        <strong>Degree:</strong>
+        <%= @book.tag.degree %>
+      </section>
+      
+    </div>
+
+    <div class = "book_content">
+      <iframe src=<%= url_for(@book.content) %> width="600" height="780" style="border: none;"> </iframe>
+    </div> 
+
+  </div>
+
+<% end %>
