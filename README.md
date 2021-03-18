@@ -1,24 +1,8 @@
-# README
+# e-Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- https://powerful-lowlands-19460.herokuapp.com/
 
-Things you may want to cover:
+# The techical stuff
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby version: 2.7.2
+- Rails version: 6.1.3
